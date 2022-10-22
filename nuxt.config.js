@@ -21,7 +21,7 @@ export default {
   css: ['normalize.css/normalize.css', '@/assets/scss/base.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['@/plugins/axios-accessor.ts'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: [{ path: '@/components', pathPrefix: false }],
@@ -40,7 +40,7 @@ export default {
   },
 
   axios: {
-    baseURL: process.env.NODE_ENV === 'production' ? '' : 'http://localhost:3000'
+    baseURL: 'http://0.0.0.0:4000'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

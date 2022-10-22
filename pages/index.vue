@@ -1,12 +1,16 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <h1>Home</h1>
+  <HomeTemplate />
 </template>
 
 <script lang="ts">
-  import Vue from 'vue'
+import Vue from 'vue'
+import { books } from '~/store';
 
-  export default Vue.extend({
-    layout: 'ibook'
-  })
+export default Vue.extend({
+  layout: 'ibook',
+  async asyncData() {
+    await books.index()
+  }
+})
 </script>
